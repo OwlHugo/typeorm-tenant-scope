@@ -1,0 +1,38 @@
+{
+  "name": "typeorm-tenant-scope",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Tenant isolation for TypeORM on Postgres: one query scope plus tests that fail when the filter is removed.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc -p tsconfig.json",
+    "knip": "knip",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage.enabled",
+    "db:up": "bash scripts/test-db-up.sh",
+    "db:down": "bash scripts/test-db-down.sh",
+    "prove:red": "bash scripts/prove-red.sh",
+    "demo": "node src/demo.ts",
+    "check": "pnpm lint && pnpm typecheck && pnpm knip && pnpm test:coverage"
+  },
+  "dependencies": {
+    "pg": "8.23.1",
+    "typeorm": "1.1.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.7",
+    "@types/node": "26.6.6",
+    "@vitest/coverage-v8": "5.1.0",
+    "knip": "6.45.1",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  }
+}
