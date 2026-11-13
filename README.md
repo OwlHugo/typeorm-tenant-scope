@@ -1,5 +1,7 @@
 # typeorm-tenant-scope
 
+[![ci](https://github.com/OwlHugo/typeorm-tenant-scope/actions/workflows/ci.yml/badge.svg)](https://github.com/OwlHugo/typeorm-tenant-scope/actions/workflows/ci.yml)
+
 Tenant isolation for TypeORM on Postgres, in one place: a query scope that appends
 `tenant_id` to every ORM query, plus specs that fail when the scope is removed.
 
