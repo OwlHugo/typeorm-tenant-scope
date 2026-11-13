@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-LOG="$(mktemp -t tenant-scope-prove-red)"
+LOG="$(mktemp -t tenant-scope-prove-red.XXXXXX)"
 
 if DISABLE_TENANT_SCOPE=1 pnpm vitest run src/tenant/isolation.test.ts >"$LOG" 2>&1; then
   echo "FAIL: the suite passed without the tenant scope" >&2
